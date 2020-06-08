@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="I:/Data 2/자바 API/spigot-1.12.2.jar"/>
+	<classpathentry kind="lib" path="I:/Data 2/자바 API/worldedit-bukkit-6.1.3.jar"/>
+	<classpathentry kind="lib" path="H:/자바 API/PlotSquared-Bukkit-3.808.jar"/>
+	<classpathentry kind="lib" path="I:/Data 2/자바 API/glowstone.jar"/>
+	<classpathentry kind="lib" path="I:/Data 2/자바 API/PlaceholderAPI-2.10.6.jar"/>
+	<classpathentry kind="lib" path="I:/Data 2/자바 API/Vault-1.6.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
