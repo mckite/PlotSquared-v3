@@ -49,7 +49,7 @@ public class Buy extends Command {
         }
         final double price = flag.get();
         checkTrue(player.getMoney() >= price, C.CANNOT_AFFORD_PLOT, "" + price); 
-  
+   
         player.withdraw(price);
         confirm.run(this, new Runnable() {
             @Override // Success
