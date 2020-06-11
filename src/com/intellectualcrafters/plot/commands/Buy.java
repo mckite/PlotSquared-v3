@@ -48,7 +48,7 @@ public class Buy extends Command {
             throw new CommandException(C.NOT_FOR_SALE);
         }
         final double price = flag.get();
-        checkTrue(player.getMoney() >= price, C.CANNOT_AFFORD_PLOT, "" + price);
+        checkTrue(player.getMoney() >= price, C.CANNOT_AFFORD_PLOT, "" + price); 
   
         player.withdraw(price);
         confirm.run(this, new Runnable() {
