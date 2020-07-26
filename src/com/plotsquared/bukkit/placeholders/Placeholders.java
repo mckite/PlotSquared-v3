@@ -30,18 +30,16 @@ public class Placeholders extends PlaceholderExpansion {
     public String getAuthor() {
         return "NotMyFault";
     }
-    
-    @Override
-    public String getVersion() {
-        return "legacy-1.0";
-    }
 
     @Override
     public String getIdentifier() {
         return "plotsquared";
     }
 
-
+    @Override
+    public String getVersion() {
+        return "legacy-1.0";
+    }
 
     @Override
     public String onPlaceholderRequest(Player p, String identifier) {
