@@ -57,7 +57,7 @@ public class Clear extends Command {
                                     FlagManager.removePlotFlag(plot, Flags.ANALYSIS);
                                 }
                                 MainUtil.sendMessage(player, C.CLEARING_DONE, "" + (System.currentTimeMillis() - start));
-                                System.out.println("플롯" + plot.toString() + "이(가) " + player.getName() + "님에 의해 청소됬습니다.");
+                                System.out.println("플롯 " + plot.toString() + "이(가) " + player.getName() + "님에 의해 청소됬습니다.");
 
                             }
                         });
