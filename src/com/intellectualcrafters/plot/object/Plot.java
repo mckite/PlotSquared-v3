@@ -1486,6 +1486,8 @@ public class Plot {
         }
         setSign(player.getName());
         MainUtil.sendMessage(player, C.CLAIMED);
+        System.out.println(player.getName() + "님이 " + this.toString() + "을 구매함" );
+
         if (teleport) {
             teleportPlayer(player);
         }

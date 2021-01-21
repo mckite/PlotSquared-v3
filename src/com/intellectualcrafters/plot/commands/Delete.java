@@ -66,6 +66,7 @@ public class Delete extends SubCommand {
                             }
                         }
                         MainUtil.sendMessage(player, C.DELETING_DONE, System.currentTimeMillis() - start);
+                        System.out.println("플롯" + plot.toString() + "이(가) " + player.getName() + "님에 의해 삭제됬습니다.");
                     }
                 });
                 if (result) {

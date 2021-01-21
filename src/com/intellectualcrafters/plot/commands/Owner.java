@@ -26,6 +26,15 @@ public class Owner extends SetCommand {
         Set<Plot> plots = plot.getConnectedPlots();
         UUID uuid = null;
         String name = null;
+        
+        String oldowner = "";
+        
+        for(UUID list : plot.getOwners()) {
+        	oldowner =  oldowner + MainUtil.getName(list) + " ";
+        }
+        
+        
+        
         if (value.length() == 36) {
             try {
                 uuid = UUID.fromString(value);
@@ -49,6 +58,8 @@ public class Owner extends SetCommand {
                     current.removeSign();
                 }
                 MainUtil.sendMessage(player, C.SET_OWNER);
+                System.out.println("플롯" + plot.toString() + "이(가) " + player.getName() + "님에 의해 기존 소유자" +oldowner + "(이)가 주인없음으로 변경되었습니다.");
+
                 return true;
             }
             C.INVALID_PLAYER.send(player, value);
@@ -71,6 +82,19 @@ public class Owner extends SetCommand {
                 return false;
             }
         }
+        
+        
+        
+        
+        
+        String oldowners = "";
+        
+        for(UUID list : plot.getOwners()) {
+        	oldowner =  oldowner + MainUtil.getName(list) + " ";
+        }
+        
+        
+        
         final String finalName = name;
         final UUID finalUUID = uuid;
         final boolean removeDenied = plot.isDenied(finalUUID);
@@ -83,6 +107,8 @@ public class Owner extends SetCommand {
                     MainUtil.sendMessage(player, C.SET_OWNER);
                     if (other != null) {
                         MainUtil.sendMessage(other, C.NOW_OWNER, plot.getArea() + ";" + plot.getId());
+                        System.out.println("플롯" + plot.toString() + "이(가) " + player.getName() + "님에 의해 기존 소유자" +oldowners + "(이)가 " + other + "으로 변경되었습니다.");
+
                     }
                 } else
                     MainUtil.sendMessage(player, C.SET_OWNER_CANCELLED);

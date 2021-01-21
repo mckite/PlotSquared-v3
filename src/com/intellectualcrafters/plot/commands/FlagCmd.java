@@ -132,6 +132,7 @@ public class FlagCmd extends SubCommand {
                     return false;
                 }
                 MainUtil.sendMessage(player, C.FLAG_ADDED);
+                System.out.println(player.getName() + "님이 플롯 " + plot.toString() + "플래그에 " + flag.getName() + ":" + parsed  + "를 추가/설정 했습니다.");
                 return true;
             }
             case "remove": {
@@ -162,6 +163,8 @@ public class FlagCmd extends SubCommand {
                         boolean o = flag1.get().removeAll((Collection) flag.parseValue(value));
                         if (o) {
                             MainUtil.sendMessage(player, C.FLAG_REMOVED);
+                            System.out.println(player.getName() + "님이 플롯 " + plot.toString() + "플래그에 " + flag.getName() + "를 제거했습니다.");
+
                         } else {
                             MainUtil.sendMessage(player, C.FLAG_NOT_REMOVED);
                             return false;
@@ -182,6 +185,8 @@ public class FlagCmd extends SubCommand {
                     player.setWeather(PlotWeather.RESET);
                 }
                 MainUtil.sendMessage(player, C.FLAG_REMOVED);
+                System.out.println(player.getName() + "님이 플롯 " + plot.toString() + "플래그에 " + flag.getName() + "를 제거했습니다.");
+
                 return true;
             }
             case "add":
@@ -213,6 +218,8 @@ public class FlagCmd extends SubCommand {
                         if (o) {
                             MainUtil.sendMessage(player, C.FLAG_ADDED);
                             val = flag1.get();
+                            System.out.println(player.getName() + "님이 플롯 " + plot.toString() + "플래그에 " + flag.getName() + ":" + parsed  + "를 추가/설정 했습니다.");
+
                         } else {
                             MainUtil.sendMessage(player, C.FLAG_NOT_ADDED);
                             return false;
@@ -225,6 +232,10 @@ public class FlagCmd extends SubCommand {
                     return false;
                 }
                 MainUtil.sendMessage(player, C.FLAG_ADDED);
+                System.out.println(player.getName() + "님이 플롯 " + plot.toString() + "플래그에 " + flag.getName() + ":" + parsed  + "를 추가/설정 했습니다.");
+
+                
+                
                 return true;
             case "list":
                 if (!Permissions.hasPermission(player, C.PERMISSION_FLAG_LIST)) {

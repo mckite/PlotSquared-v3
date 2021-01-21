@@ -89,9 +89,11 @@ public class Buy extends Command {
                 PlotPlayer owner = UUIDHandler.getPlayer(plot.owner);
                 if (owner != null) {
                     C.PLOT_SOLD.send(owner, plot.getId(), player.getName(), price);
+                    System.out.println("주인이 " + owner.getName() + "님인 플롯 " + plot.toString() + "이 판매됬습니다.");
                 }
                 plot.removeFlag(Flags.PRICE);
                 plot.setOwner(player.getUUID());
+                plot.setSign(player.getName());
                 
                 /*
                 
@@ -109,12 +111,15 @@ public class Buy extends Command {
                 
                 
                 C.CLAIMED.send(player);
+                System.out.println(player.getName() + "님이 판매중인 " + plot.toString() + "을 " + price +"원에 구매함" );
                 whenDone.run(Buy.this, CommandResult.SUCCESS);
             }
         }, new Runnable() {
             @Override // Failure
             public void run() {
                 player.deposit(price);
+              MainUtil.sendMessage(player, C.ADDED_BALANCE, price + "");
+
                 whenDone.run(Buy.this, CommandResult.FAILURE);
             }
         });

@@ -131,11 +131,29 @@ public class Claim extends SubCommand {
                 @Override
                 public void run() {
                     sendMessage(player, C.PLOT_NOT_CLAIMED);
+                    if ((EconHandler.getEconHandler() != null) && area.USE_ECONOMY) {
+                        Expression<Double> costExr = area.PRICES.get("claim");
+                        double cost = costExr.evaluate((double) currentPlots);
+                        if (cost > 0d) {
+                            EconHandler.getEconHandler().depositMoney(player, cost);
+                            sendMessage(player, C.ADDED_BALANCE, cost + "");
+                        }
+                    }
+                    
                 }
             });
             return true;
         } else {
             sendMessage(player, C.PLOT_NOT_CLAIMED);
+            if ((EconHandler.getEconHandler() != null) && area.USE_ECONOMY) {
+                Expression<Double> costExr = area.PRICES.get("claim");
+                double cost = costExr.evaluate((double) currentPlots);
+                if (cost > 0d) {
+                    EconHandler.getEconHandler().depositMoney(player, cost);
+                    sendMessage(player, C.ADDED_BALANCE, cost + "");
+                }
+            }
+            
         }
         return false;
     }
