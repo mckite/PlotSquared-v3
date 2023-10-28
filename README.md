@@ -1,4 +1,3 @@
 # PlotSquared-v3
 
-some modifications of the code and
-some fixs of bugs. 
+Some modifications on code and fixed unhandled excpetion and errors from original code at PlotSquared.
