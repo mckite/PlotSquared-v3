@@ -1,4 +1,3 @@
 # PlotSquared-v3
 
-Most of source code is forked from PlotSquared, so that's not my own code, however, this source conatins
-some modifications on code and fixed unhandled excpetion and errors from original code at PlotSquared by me.
+Much of the source code has been forked from PlotSquared, so it's not my original code. However, this source code includes some modifications and fixes for unhandled exceptions and errors from the original code in PlotSquared, which I implemented. 
